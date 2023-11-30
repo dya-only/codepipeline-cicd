@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - aws --version
-      - $(aws ecr get-login --no-include-email --region ap-northeast-2)
+      - aws ecr get-login --no-include-email --region ap-northeast-2
       - npm install yarn
   build:
     commands:
