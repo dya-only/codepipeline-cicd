@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - aws --version
+      - $(aws ecr get-login --no-include-email --region ap-northeast-2)
+      - npm install yarn
+  build:
+    commands:
+      - docker build -t nest .
+  post_build:
+    commands:
+      - docker tag nest:latest public.ecr.aws/l9d5m0q6/nest:latest
+      - docker push public.ecr.aws/l9d5m0q6/nest:latest
+      - echo Writing image definitions file...
+      - printf '[{"name":"nest-container","imageUri":"%s"}]' 658986583341.dkr.ecr.ap-northeast-2.amazonaws.com/nest:latest > imagedefinitions.json
+artifacts:
+  files: imagedefinitions.json
