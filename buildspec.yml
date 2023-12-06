@@ -18,6 +18,6 @@ phases:
       - docker tag test:latest public.ecr.aws/l9d5m0q6/test:latest
       - docker push public.ecr.aws/l9d5m0q6/test:latest
       - echo Writing image definitions file...
-      - printf '[{"name":"test","imageUri":"%s"}]' 658986583341.dkr.ecr.ap-northeast-2.amazonaws.com/nest:latest > imagedefinitions.json
+      - printf '[{"name":"test","imageUri":"%s"}]' 658986583341.dkr.ecr.ap-northeast-2.amazonaws.com/test:latest > imagedefinitions.json
 artifacts:
   files: imagedefinitions.jsons
