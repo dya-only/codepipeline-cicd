@@ -3,23 +3,22 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      docker: 23
+      nodejs: 21
     commands:
       - npm i yarn
   pre_build:
     commands:
-      - aws --version
-      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/l9d5m0q6
+      - echo Installing packages...
+      - yarn
   build:
     commands:
-      - docker build -t asdf .
+      - echo Build Starting...
+      - yarn build
   post_build:
     commands:
-      - docker tag asdf:latest public.ecr.aws/l9d5m0q6/asdf:latest
-      - docker push public.ecr.aws/l9d5m0q6/asdf:latest
-      - echo Writing image definitions file...
-      - printf '[{"name":"asdf","imageUri":"%s"}]' 658986583341.dkr.ecr.ap-northeast-2.amazonaws.com/asdf:latest > imagedefinitions.json 
-
+      - echo Build Success
+      
 artifacts:
   files: 
-    - imagedefinitions.json
+    - appspec.yml
+    - '**/*'
