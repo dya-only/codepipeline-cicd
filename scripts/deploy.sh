@@ -1,7 +1,8 @@
 #!/bin/sh
 
-DOCKER_IMAGE_NAME=test-app
+cd /home/ec2-user/app
 
+DOCKER_IMAGE_NAME=test-app
 DOCKER_CONTAINER_NAME=test-app
 
 docker build -t ${DOCKER_IMAGE_NAME} .

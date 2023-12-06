@@ -5,10 +5,8 @@ phases:
     runtime-versions:
       nodejs: 18
     commands:
-      - npm i yarn
-  pre_build:
-    commands:
       - echo Installing packages...
+      - npm i yarn
       - yarn
   build:
     commands:
