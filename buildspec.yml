@@ -6,7 +6,7 @@ phases:
       nodejs: 18
     commands:
       - echo Installing packages...
-      - npm i yarn
+      - npm i -g yarn
       - yarn
   build:
     commands:
