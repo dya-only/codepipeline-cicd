@@ -5,19 +5,19 @@ phases:
     runtime-versions:
       docker: 23
     commands:
-      - npm install yarn
+      - npm i yarn
   pre_build:
     commands:
       - aws --version
       - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/l9d5m0q6
   build:
     commands:
-      - docker build -t nest .
+      - docker build -t test .
   post_build:
     commands:
-      - docker tag nest:latest public.ecr.aws/l9d5m0q6/nest:latest
-      - docker push public.ecr.aws/l9d5m0q6/nest:latest
+      - docker tag test:latest public.ecr.aws/l9d5m0q6/test:latest
+      - docker push public.ecr.aws/l9d5m0q6/test:latest
       - echo Writing image definitions file...
-      - printf '[{"name":"nest-container","imageUri":"%s"}]' 658986583341.dkr.ecr.ap-northeast-2.amazonaws.com/nest:latest > imagedefinitions.json
+      - printf '[{"name":"test","imageUri":"%s"}]' 658986583341.dkr.ecr.ap-northeast-2.amazonaws.com/nest:latest > imagedefinitions.json
 artifacts:
-  files: imagedefinitions.json
+  files: imagedefinitions.jsons
