@@ -12,13 +12,13 @@ phases:
       - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/l9d5m0q6
   build:
     commands:
-      - docker build -t test .
+      - docker build -t asdf .
   post_build:
     commands:
-      - docker tag test:latest public.ecr.aws/l9d5m0q6/test:latest
-      - docker push public.ecr.aws/l9d5m0q6/test:latest
+      - docker tag asdf:latest public.ecr.aws/l9d5m0q6/asdf:latest
+      - docker push public.ecr.aws/l9d5m0q6/asdf:latest
       - echo Writing image definitions file...
-      - printf '[{"name":"test","imageUri":"%s"}]' 658986583341.dkr.ecr.ap-northeast-2.amazonaws.com/test:latest > imagedefinitions.json 
+      - printf '[{"name":"asdf","imageUri":"%s"}]' 658986583341.dkr.ecr.ap-northeast-2.amazonaws.com/asdf:latest > imagedefinitions.json 
 
 artifacts:
   files: 
