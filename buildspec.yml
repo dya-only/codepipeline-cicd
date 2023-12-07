@@ -3,13 +3,15 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      docker: 23
+      - nodejs:18
     commands:
       - echo ======================= Installing packages =======================
+      - npm i -g yarn
+      - yarn
   build:
     commands:
       - echo ======================= Build Starting =======================
-      - docker-compose build
+      - yarn build
   post_build:
     commands:
       - echo ======================= Build Success =======================
