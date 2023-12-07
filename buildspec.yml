@@ -3,8 +3,8 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18
-      docker: 23
+      - nodejs: 18
+      - docker: 23
     commands:
       - echo Installing packages...
       - npm i -g yarn
