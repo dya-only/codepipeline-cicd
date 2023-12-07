@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 public.ecr.aws/l9d5m0q6/node-alpine:latest
+FROM public.ecr.aws/l9d5m0q6/node-alpine:latest
 
 COPY . /app
 WORKDIR /app
