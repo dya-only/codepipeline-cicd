@@ -8,7 +8,6 @@ phases:
       - echo Installing packages...
       - npm i -g yarn
       - yarn
-      - rm -rf dist
   build:
     commands:
       - echo Build Starting...
