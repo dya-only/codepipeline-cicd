@@ -12,6 +12,7 @@ phases:
     commands:
       - echo Build Starting...
       - yarn build
+      - docker-compose build
   post_build:
     commands:
       - echo Build Success
