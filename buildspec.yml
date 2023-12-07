@@ -4,18 +4,19 @@ phases:
   install:
     runtime-versions:
       nodejs: 18
+      docker: 23
     commands:
-      - echo ======================= Installing packages =======================
+      - echo Installing packages...
       - npm i -g yarn
       - yarn
       - rm -rf dist
   build:
     commands:
-      - echo ======================= Build Starting =======================
+      - echo Build Starting...
       - yarn build
   post_build:
     commands:
-      - echo ======================= Build Success =======================
+      - echo Build Success...
 
 artifacts:
   files: 
