@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM public.ecr.aws/l9d5m0q6/node-alpine
 
 COPY . /app
 WORKDIR /app
