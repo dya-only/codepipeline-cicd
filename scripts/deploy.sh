@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd /home/ec2-user/app
+cd /home/ec2-user/test-app
 
 # DOCKER_IMAGE_NAME=test-app
 # DOCKER_CONTAINER_NAME=test-app
