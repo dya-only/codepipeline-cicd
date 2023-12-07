@@ -5,14 +5,14 @@ phases:
     runtime-versions:
       docker: 23
     commands:
-      - echo Installing packages...
+      - echo ======================= Installing packages =======================
   build:
     commands:
-      - echo Build Starting...
+      - echo ======================= Build Starting =======================
       - docker-compose build
   post_build:
     commands:
-      - echo Build Success
+      - echo ======================= Build Success =======================
 
 artifacts:
   files: 
