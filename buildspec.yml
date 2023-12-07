@@ -14,7 +14,7 @@ phases:
       - yarn build
   post_build:
     commands:
-      - echo Build Success...
+      - echo Build Success!!
 
 artifacts:
   files: 
